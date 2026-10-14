@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/*  DEVICES BREAKPOINTS
+    Telas pequenas: até 600px
+    Celulares: 600px até 768px
+    Tablets: 768px até 992px
+    Notebooks: 992px até 1200px
+    Grandes telas: acima de 1200px
+*/
+
+/* --- SEU CÓDIGO ORIGINAL DE RESPONSIVIDADE --- */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    section.coluna {
+        flex: 1 1 calc(50% - 20px); /* Ajustado para descontar o espaçamento do gap */
+    }
+}
+
+@media screen and (min-width: 992px) {
+    section.coluna {
+        flex: 1 1 calc(25% - 20px); /* Ajustado para descontar o espaçamento do gap */
+    }
+}
+
+
+/* --- A ANIMAÇÃO DO MODULO 5 QUE FOI ADICIONADA --- */
+
+/* 1. Definindo as etapas da animação com o @keyframes */
+@keyframes surgir {
+    0% {
+        opacity: 0;                   /* Começa invisível */
+        transform: translateY(30px);   /* Começa deslocado 30px para baixo */
+    }
+    100% {
+        opacity: 1;                   /* Termina 100% visível */
+        transform: translateY(0);      /* Volta para a posição original */
+    }
+}
+
+/* 2. Aplicando a animação diretamente no elemento selecionado */
+section.coluna {
+    /* Nome da animação, tempo de duração (0.8s), transição suave e fixa o estado final */
+    animation: surgir 0.8s ease-out forwards;
+}
